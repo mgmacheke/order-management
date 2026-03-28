@@ -1,24 +1,24 @@
-package com.pollinate.order.management.model;
+package com.pollinate.order.management.dto;
 
-import jakarta.persistence.*;
+import com.pollinate.order.management.model.Product;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name="products")
-public class Product {
+public class ProductResponse {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(nullable = false)
     private String name;
-
     private String description;
-
-    @Column(nullable = false)
     private BigDecimal price;
+
+    public static ProductResponse from(Product product) {
+        ProductResponse response = new ProductResponse();
+        response.id = product.getId();
+        response.name = product.getName();
+        response.description = product.getDescription();
+        response.price = product.getPrice();
+        return response;
+    }
 
     public Long getId() {
         return id;
