@@ -1,4 +1,4 @@
-package com.pollinate.order.management.service.controller;
+package com.pollinate.order.management.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.pollinate.order.management.dto.ProductRequest;
