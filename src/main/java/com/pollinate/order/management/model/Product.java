@@ -17,7 +17,7 @@ public class Product {
 
     private String description;
 
-    @Column(nullable = false)
+    @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal price;
 
     public Long getId() {
